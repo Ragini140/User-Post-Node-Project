@@ -36,7 +36,7 @@ This is a Node.js REST API demo project that demonstrates user authentication, J
 
 ---
 ## 📁 Project Structure
-Ragin Rathod Node Practical
+User Post Node Project
 │
 ├── routes
 │ ├── index.js
