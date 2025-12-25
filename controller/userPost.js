@@ -2,13 +2,13 @@ const { USER, POST } = require('../models/index');
 exports.createPost = async (req, res) =>{
     try{
         const {user, body : { caption }} = req
-         
+         const file = req.file ? req.file.filename : null;
          //vaildate user id
           const isExist = await USER.findOne({ _id: user.id });
          if (!isExist) return res.send({ status: 422, message: "Invalid user id" });
 
          //create user post
-         const newPost = await POST.create({userId: user.id, caption})
+         const newPost = await POST.create({userId: user.id, caption, file})
          return res.send({ status: 200, message: "Post Created Successfully", data: newPost})
         }catch(error){
         console.log(error);

@@ -3,6 +3,7 @@ const { Joi } = require('express-validation');
 exports.createPost = {
   body: Joi.object({
     caption : Joi.string().trim().max(255).required().messages({'any.required': 'Caption is required', 'string.empty': 'Caption must be required'}),
+    file: Joi.any().optional() 
   })
 };
 
