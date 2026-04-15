@@ -45,6 +45,7 @@ exports.userLogin = async (req, res) => {
 
 exports.getUserProfile = async (req, res) => {
   try {
+    let data = 2
     const { user } = req;
     //find user profile
     const userData = await USER.findOne({ _id: user.id },{_id: 1, user_name: 1, email: 1, createdAt:1}).lean();
